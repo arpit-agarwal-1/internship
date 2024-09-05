@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Web Developer Portfolio</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 20px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav a {
+            color: white;
+            margin: 0 15px;
+        }
+
+        /* Home section */
+        .home {
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 50px;
+        }
+
+        .home p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        /* About section */
+        .about {
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .about .details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .about .details div {
+            width: 45%;
+        }
+
+        /* Projects section */
+        .projects {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .project-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .project p {
+            font-size: 16px;
+        }
+
+        /* Skills section */
+        .skills {
+            background-color: white;
+            padding: 50px 20px;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .skill-set {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            width: 30%;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .skill img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            font-size: 20px;
+        }
+
+        /* Contact section */
+        .contact {
+            background-color: #333;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <h1>Arpit agarwal</h1>
+        <p>Web Developer | Frontend Specialist | JavaScript Enthusiast</p>
+        <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate web developer with a focus on building responsive and visually appealing websites. With years of experience in frontend and backend technologies, I aim to deliver high-quality, performance-oriented web applications. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+        </p>
+        <div class="details">
+            <div>
+                <h3>Education</h3>
+                <p>Bachelor of Science in Computer Science, graphic era deeemed to be university</p>
+            </div>
+            <div>
+                <h3>Experience</h3
+                    <p>Web Developer at ABC Company (2022 - Present)</p>
+                    <p>Frontend Developer Intern at DEF Startup (2021 - 2022)</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <img src="project1-image.jpg" alt="Project 1">
+                    <h3>Project Name 1</h3>
+                    <p>A brief description of this project and its key features. Technologies: HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <img src="project2-image.jpg" alt="Project 2">
+                    <h3>Project Name 2</h3>
+                    <p>A brief description of this project and its key features. Technologies: React, Node.js, Express</p>
+                    <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <img src="project3-image.jpg" alt="Project 3">
+                    <h3>Project Name 3</h3>
+                    <p>A brief description of this project and its key features. Technologies: Django, Python, PostgreSQL</p>
+                    <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+    
+        <section class="skills" id="skills">
+            <h2>Skills</h2>
+            <div class="skill-set">
+                <div class="skill">
+                    <img src="html-icon.png" alt="HTML">
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill">
+                    <img src="css-icon.png" alt="CSS">
+                    <h3>CSS3</h3><!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Weather App</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                background-color: #f0f8ff;
+                                margin: 0;
+                                padding: 0;
+                                text-align: center;
+                            }
+                            .container {
+                                padding: 50px;
+                            }
+                            input[type="text"] {
+                                padding: 10px;
+                                width: 300px;
+                                margin: 20px;
+                                border-radius: 5px;
+                                border: 1px solid #ccc;
+                            }
+                            button {
+                                padding: 10px 20px;
+                                border: none;
+                                background-color: #3498db;
+                                color: white;
+                                cursor: pointer;
+                                border-radius: 5px;
+                            }
+                            .weather-info {
+                                margin-top: 20px;
+                                background-color: #fff;
+                                border-radius: 10px;
+                                padding: 20px;
+                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                                display: none;
+                            }
+                            .weather-info h2 {
+                                margin-bottom: 10px;
+                            }
+                            .weather-info p {
+                                font-size: 18px;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                    
+                    <div class="container">
+                        <h1>Weather App</h1>
+                        <p>Enter a city name or use your location:</p>
+                        <input type="text" id="locationInput" placeholder="Enter city name">
+                        <button id="getWeatherBtn">Get Weather</button>
+                        <button id="useLocationBtn">Use My Location</button>
+                    
+                        <div class="weather-info" id="weatherInfo">
+                            <h2 id="weatherCity"></h2>
+                            <p id="weatherDesc"></p>
+                            <p><strong>Temperature:</strong> <span id="weatherTemp"></span> °C</p>
+                            <p><strong>Humidity:</strong> <span id="weatherHumidity"></span>%</p>
+                            <p><strong>Wind Speed:</strong> <span id="weatherWind"></span> km/h</p>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        const apiKey = 'your-api-key'; // Replace with your weather API key
+                    
+                        document.getElementById('getWeatherBtn').addEventListener('click', () => {
+                            const location = document.getElementById('locationInput').value;
+                            if (location) {
+                                getWeatherData(location);
+                            } else {
+                                alert('Please enter a location.');
+                            }
+                        });
+                    
+                        document.getElementById('useLocationBtn').addEventListener('click', () => {
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(position => {
+                                    const lat = position.coords.latitude;
+                                    const lon = position.coords.longitude;
+                                    getWeatherDataByCoords(lat, lon);
+                                });
+                            } else {
+                                alert('Geolocation is not supported by your browser.');
+                            }
+                        });
+                    
+                        function getWeatherData(location) {
+                            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.cod === 200) {
+                                    displayWeatherData(data);
+                                } else {
+                                    alert('Location not found.');
+                                }
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                        }
+                    
+                        function getWeatherDataByCoords(lat, lon) {
+                            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                displayWeatherData(data);
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                        }
+                    
+                        function displayWeatherData(data) {
+                            const weatherInfo = document.getElementById('weatherInfo');
+                            document.getElementById('weatherCity').textContent = `${data.name}, ${data.sys.country}`;
+                            document.getElementById('weatherDesc').textContent = data.weather[0].description;
+                            document.getElementById('weatherTemp').textContent = data.main.temp;
+                            document.getElementById('weatherHumidity').textContent = data.main.humidity;
+                            document.getElementById('weatherWind').textContent = data.wind.speed;
+                            weatherInfo.style.display = 'block';
+                        }
+                    </script>
+                    
+                    </body>
+                    </html>
+                    
+                </div>
+                <div class="skill">
+                    <img src="javascript-icon.png" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill">
+                    <img src="react-icon.png" alt="React">
+                    <h3>React</h3>
+                </div>
+                <div class="skill">
+                    <img src="nodejs-icon.png" alt="Node.js">
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill">
+                    <img src="python-icon.png" alt="Python">
+                    <h3>Python</h3>
+                </div>
+            </div>
+        </section>
+    
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>If you’d like to get in touch or discuss potential projects, feel free to contact me!</p>
+            <form class="contact-form" action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+    
+    </body>
+    </html>
+    
