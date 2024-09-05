@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Fixed navigation bar */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            margin: 0 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for menu items */
+        .nav-menu a:hover {
+            color: #ff6347;
+        }
+
+        /* Scroll effect - when the page is scrolled, change the background */
+        .scrolled {
+            background-color: #333;
+        }
+
+        /* Sections for demonstration */
+        section {
+            height: 100vh;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        #home {
+            background-color: #1abc9c;
+        }
+
+        #about {
+            background-color: #3498db;
+        }
+
+        #services {
+            background-color: #9b59b6;
+        }
+
+        #contact {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Home</h1>
+        <p>Scroll down to see the navbar change color.</p>
+    </section>
+
+    <section id="about">
+        <h1>About Us</h1>
+    </section>
+
+    <section id="services">
+        <h1>Our Services</h1>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+    </section>
+
+    <script>
+        // Function to change navbar style on scroll
+        window.onscroll = function() {
+            let navbar = document.getElementById("navbar");
+
+            if (window.pageYOffset > 100) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        };
+    </script>
+</body>
+</html>
