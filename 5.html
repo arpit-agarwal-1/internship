@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .weather-info {
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .weather-info h2 {
+            margin-bottom: 10px;
+        }
+        .weather-info p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Weather App</h1>
+    <p>Enter a city name or use your location:</p>
+    <input type="text" id="locationInput" placeholder="Enter city name">
+    <button id="getWeatherBtn">Get Weather</button>
+    <button id="useLocationBtn">Use My Location</button>
+
+    <div class="weather-info" id="weatherInfo">
+        <h2 id="weatherCity"></h2>
+        <p id="weatherDesc"></p>
+        <p><strong>Temperature:</strong> <span id="weatherTemp"></span> °C</p>
+        <p><strong>Humidity:</strong> <span id="weatherHumidity"></span>%</p>
+        <p><strong>Wind Speed:</strong> <span id="weatherWind"></span> km/h</p>
+    </div>
+</div>
+
+<script>
+    const apiKey = 'f318a3b7c7f12f3d7d321a60eb9c56c6'; // Replace with your weather API key
+
+    document.getElementById('getWeatherBtn').addEventListener('click', () => {
+        const location = document.getElementById('locationInput').value;
+        if (location) {
+            getWeatherData(location);
+        } else {
+            alert('Please enter a location.');
+        }
+    });
+
+    document.getElementById('useLocationBtn').addEventListener('click', () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                getWeatherDataByCoords(lat, lon);
+            });
+        } else {
+            alert('Geolocation is not supported by your browser.');
+        }
+    });
+
+    function getWeatherData(location) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === 200) {
+                displayWeatherData(data);
+            } else {
+                alert('Location not found.');
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    function getWeatherDataByCoords(lat, lon) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            displayWeatherData(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    function displayWeatherData(data) {
+        const weatherInfo = document.getElementById('weatherInfo');
+        document.getElementById('weatherCity').textContent = `${data.name}, ${data.sys.country}`;
+        document.getElementById('weatherDesc').textContent = data.weather[0].description;
+        document.getElementById('weatherTemp').textContent = data.main.temp;
+        document.getElementById('weatherHumidity').textContent = data.main.humidity;
+        document.getElementById('weatherWind').textContent = data.wind.speed;
+        weatherInfo.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
